@@ -10,15 +10,23 @@ namespace MySnake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
+            Console.SetBufferSize(80, 25);
+
+            // отрисовка рамочки
+            HorizontalLine upline = new HorizontalLine(0, 78, 0, '+');
+            upline.Drow();
+            HorizontalLine downline = new HorizontalLine(0, 78, 24, '+');
+            downline.Drow();
+
+            VerticalLine leftline = new VerticalLine(0, 24, 0, '+');
+            leftline.Drow();
+            VerticalLine rightline = new VerticalLine(0, 24, 78, '+');
+            rightline.Drow();
+
+            // отрисовка точек
+            Point p1 = new Point(4, 5, '*');
             p1.Draw();
 
-            Point p2 = new Point(4, 5, '#');
-            p2.Draw();
-
-            HorizontalLine line = new HorizontalLine(5, 10, 8, '+');
-            line.Drow();
-     
             Console.ReadLine();
         }
 
